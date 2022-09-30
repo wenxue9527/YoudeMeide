@@ -1,0 +1,28 @@
+<div>
+    <nz-table #rowSelectionTable nzShowSizeChanger [nzData]="listOfData"
+    [nzShowPagination]="false"
+      (nzCurrentPageDataChange)="onCurrentPageDataChange($event)" >
+        <thead>
+            <tr>
+                <th [(nzChecked)]="checked" [nzIndeterminate]="indeterminate"
+                    (nzCheckedChange)="onAllChecked($event)"></th>
+                <th>Name</th>
+                <th>gender</th>
+                <th>phone</th>
+                <th>email</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let data of rowSelectionTable.data">
+                <td [nzChecked]="setOfCheckedId.has(data.id)" (nzCheckedChange)="onItemChecked(data.id, $event)"></td>
+                <td>{{ data.name }}</td>
+                <td>{{ data.gender }}</td>
+                <td>{{ data.phone }}</td>
+                <td>{{ data.email }}</td>
+                <!-- <button style="margin: 20px;" (click)="edit()" nz-button nzType="primary">edit</button> -->
+                <button style="margin: 10px;background-color: red;" (click)="delete(data.name)" nz-button nzType="primary">delete</button>
+            </tr>
+        </tbody>
+    </nz-table>
+    <!-- <button style="margin: 20px;" (click)="add()" nz-button nzType="primary">delete</button> -->
+</div>

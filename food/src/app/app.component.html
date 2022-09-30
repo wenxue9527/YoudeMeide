@@ -1,0 +1,41 @@
+<nz-layout class="layout">
+  <!-- <nz-header> -->
+    <!-- <div class="logo"> -->
+      <!-- <img src="../assets/logo.jpg" alt=""> -->
+      <!-- <span style="color:#fff;margin-left: 20px">PANADA DIET DASHBOARD</span> -->
+    <!-- </div> -->
+    <!-- <div class="time">
+      {{time}}
+    </div> -->
+  <!-- </nz-header> -->
+  <nz-content class="outer-content">
+    <nz-layout class="inner-layout">
+      <nz-sider nzWidth="200px" nzTheme="light">
+        <ul nz-menu nzMode="inline" class="sider-menu">
+          <li nz-menu-item nzSelected>
+            <a routerLink="/names">
+              <i nz-icon nzType="bars"></i>
+              <span>Name List</span>
+            </a>
+          </li>
+          <li nz-menu-item>
+            <a routerLink="/today">
+              <i nz-icon nzType="field-time"></i>
+              <span>Edit List</span>
+            </a>
+          </li>
+          <!-- <li nz-menu-item>
+            <a routerLink="/chart">
+              <i nz-icon nzType="pie-chart"></i>
+              <span>Create</span>
+            </a>
+          </li> -->
+        </ul>
+      </nz-sider>
+      <nz-content class="inner-content">
+        <router-outlet></router-outlet>
+      </nz-content>
+    </nz-layout>
+  </nz-content>
+  <!-- <nz-footer style="background: #001529;color: #fff">©2022  All rights reserved, 2022.</nz-footer> -->
+</nz-layout>

@@ -1,0 +1,48 @@
+<div>
+    <div>
+        <nz-table #rowSelectionTable nzShowSizeChanger [nzData]="listOfData"
+        [nzShowPagination]="false"
+            (nzCurrentPageDataChange)="onCurrentPageDataChange($event)">
+            <thead>
+                <tr>
+                    <!-- <th [(nzChecked)]="checked" [nzIndeterminate]="indeterminate"
+                        (nzCheckedChange)="onAllChecked($event)"></th> -->
+                    <th>Name</th>
+                    <th>Password</th>
+                    <th>gender</th>
+                    <th>phone</th>
+                    <th>email</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th><input type="text" [(ngModel)]="userkey"></th>
+                    <th><input type="text" [(ngModel)]="passwordkey"></th>
+                    <th><input type="text" [(ngModel)]="genderkey"></th>
+                    <th><input type="text" [(ngModel)]="phonekey"></th>
+                    <th><input type="text" [(ngModel)]="emailkey"></th>
+                </tr>
+                <!-- <tr *ngFor="let data of rowSelectionTable.data">
+                    <td [nzChecked]="setOfCheckedId.has(data.id)" (nzCheckedChange)="onItemChecked(data.id, $event)"></td>
+                    <td>{{ data.name }}</td>
+                    <td>{{ data.gender }}</td>
+                    <td>{{ data.phone }}</td>
+                    <td>{{ data.email }}</td>
+                </tr> -->
+            </tbody>
+        </nz-table>
+        <!-- <div style="padding: 30px">
+            <span>
+                gender: {{gender}}
+            </span>
+            <span style="margin-left: 30px;">
+                phone: {{phone}}
+            </span>
+            <span style="margin-left: 30px;">
+                email: {{email}}
+            </span>
+        </div> -->
+        <button style="margin: 20px;" (click)="insert()" nz-button nzType="primary">Create</button>
+        <button style="margin: 20px;" (click)="search()" nz-button nzType="primary">Search</button>
+    </div>
+</div>
